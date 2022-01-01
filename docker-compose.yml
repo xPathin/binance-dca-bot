@@ -1,0 +1,12 @@
+version: "3.4"
+
+services:
+  binance-dca-bot:
+    volumes:
+      - ./trades.js:/app/trades.js
+      - ./.env:/app/.env
+    restart: always
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: binance-dca-bot
